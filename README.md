@@ -1,6 +1,14 @@
 # express-application-template
 A template to use for writing express applications
 
+# How to use
+```bash
+npx degit lucasew/express-application-template /path/to/destination
+yarn 
+yarn dev # to start the server and restart when the files change
+yarn start # to start the server without auto restart
+```
+
 # This template includes:
 
 - Let it burn strategy to handle errors inside the route handlers. You can throw 
@@ -10,6 +18,8 @@ Credits: [express-promise-router](https://www.npmjs.com/package/express-promise-
 - Throw errors inside functions called by the route that not
 necessarily have acess to the response object without hanging the request.
 See throwApiError at [here](./src/utils/index.ts)
+
+- Validation errors caused by celebrate/joi when throwed are returned as error 400 instead of 500
 
 - This system is projected to always return a object that matches the following interface
 ```typescript
@@ -28,7 +38,7 @@ See [./src/routes/api/returnStatusCode/index.ts](./src/routes/api/returnStatusCo
 
 - 100% implemented in typescript
 
-- A generic plugin loader and a function to use this generic plugin loader to load new routes, that is also to load
+- A generic plugin loader and a function to use this generic plugin loader to load new routes, that is also used to load
 the routes of this project. Just create a folder and start writing your index.ts exporting the router.
 See: [src/utils/index.ts](./src/utils/index.ts)
 
